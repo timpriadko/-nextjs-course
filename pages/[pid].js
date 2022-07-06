@@ -10,8 +10,6 @@ function ProductDetailPage(props) {
     return <p>Loading...</p>;
   }
 
-  console.log(loadedProduct);
-
   return (
     <Fragment>
       <h1>{loadedProduct.title}</h1>
@@ -36,7 +34,7 @@ export async function getStaticProps(context) {
   const product = data.products.find((product) => product.id === productId);
 
   if (!product) {
-    return { notFound: true }
+    return { notFound: true };
   }
 
   return {
